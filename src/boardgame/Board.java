@@ -6,13 +6,18 @@ public class Board {
 	private Integer columns;
 	private Piece[][] pieces;
 
-	public Board() {
-	}
-
 	public Board(Integer rows, Integer columns) {
 		this.rows = rows;
 		this.columns = columns;
 		pieces = new Piece[rows][columns];
+	}
+	
+	public Piece piece(int row, int column) {
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) {
+		return pieces[position.getRow()][position.getColum()];
 	}
 
 	public Integer getRows() {
