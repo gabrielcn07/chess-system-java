@@ -37,8 +37,13 @@ public class UI {
 			int row = Integer.parseInt(s.substring(1));
 			return new ChessPosition(column, row);
 		} catch (RuntimeException e) {
-			throw new InputMismatchException("Erro a ler posição do xadrez, posicoes validas de A1 a H8");
+			throw new InputMismatchException("Erro ao ler posicao do xadrez, posicoes validas de A1 a H8");
 		}
+	}
+	
+	public static void clearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
